@@ -1,0 +1,267 @@
+Introduction to React:
+1. ReactJS is a js library used to develop the frontend application with the help of UI Components
+2.It uses Virtual DOM
+3.It supports JSX
+4.It provides one way binding
+5.It is used to develop a single page web application
+
+Components
+A small piece of code which can be reused
+
+      <header>
+        <nav>
+<section>   <aside>
+      <footer>
+
+Virtual DOM/React DOM
+It is virtually exist and it boosts up the performance of web application by rendering the pages
+more faster
+
+Real DOM/HTML DOM  
+
+<HTML>
+   <head>
+   </head>
+       <body> <h1>Hello <Span> World</span> </h1>
+       </body>
+</html>
+
+Modification in virtual dom
+
+Real DOM/HTML DOM  
+
+<HTML>
+   <head>
+   </head>
+       <body> <h1>Hello <Span> World</span> </h1>
+       <p>Hi</p>
+       </body>
+</html>
+
+Apple
+
+Apple
+Orange
+
+Apple
+Orange
+Mango
+
+JSX
+Javascript XML
+Inside the javascript file we can write the HTML elements
+One way binding
+view to Component
+Component to view
+
+Folder Structure of React application
+1. node_modules folder => The files and folder to run the react application
+2. public folder => index.html
+3. src folder=>index.js,index,css,App.js,App.css
+4. package-lock.json & package.json files => To know about the dependencies and version of the application.
+5. README.md=> document about react application
+
+
+index.html:
+<div id="root></div>(for virtual dom)
+       const root= ReactDOM.createRoot(document.getElementByID("root"));
+       root.render(<h1>Heloo</h1>);
+
+
+Virtual DOM                                   Real DOM
+<div id="root></div>                     <div id="root">
+               
+                                          </div>
+
+Next Step
+<div id="root">                           <div id="root">
+   <h1>hello</h1>                            <h1>Hello</h1></div>
+</div>
+
+
+index.js
+
+import App from"./App";
+ const root= ReactDOM.createRoot(document.getElementByID("root"));
+       root.render(<App/>);
+ <body>
+ <div id="root">
+ <header>
+ ....
+ </header>
+ </div>
+ </body>
+
+
+
+ App.js
+
+ function App(){
+    return (
+        <div>
+           <h1>Hello</h1>
+           <h1>Hi<h1>
+        </div>
+    )
+ }
+ export default App;
+
+
+ COMPONENETS:
+ 1. Functional comp->stateless comp and it doesn't have lifecycle also
+ 2. class comp->stateful comp and it have lifecycle methods
+
+ How to write a function Component
+ function functionName(){
+   return(
+      <div>
+      HTML code goes here...
+      </div>
+   )
+ } 
+
+ Exporting in 2 ways:
+
+1. function functionName(){
+   return(
+      <div>htmldoes herre...</div>
+   )
+ }
+ export default functionName;
+
+ default can export onlt one function
+
+ 2.namespace export
+
+
+ App.js=>index.js=>index.html
+         Virtual    Real        :DOM
+
+
+2 ways to import Component:
+1.default export component import
+   import anyName fron "filePath"
+
+2. namesppace export comp
+  import{sameName} from filePath
+
+  import{header,Nav} from"./components/Header"
+
+  class component
+
+  import{Component} from"react;
+  class className extends Component{
+   render(){
+      return(
+         <div>
+         html goes here
+         </div>
+      )
+   }
+  }
+
+  exporting class component in 2 ways
+  1. default export class namr->ONLY ONE COMPONENT CAN BE EXPORTED PER FILE
+  2. export class classNameONLY ->MULTIPLE COMPONENT CAN BE EXPORTED PER FILE
+
+
+
+  State and Props
+
+
+  Props->immutable(can't be changed).It is used to transmit the data from one component to another
+It is used to transmit the datafrom one comp[parent ] to another child 
+
+State:internal storage of component(mutable)
+
+  App is a parent component and C1 is a child component
+  function App(){
+   retunr(
+      <div>
+      <c1/>
+      <c2/> </div>
+   )
+  }
+
+  here c1 is parent and c3 is child
+  function c1(){
+   return(
+      <div>
+      <c3 />
+      </div>
+   )
+
+
+  }
+
+
+  -----------------------------
+  Lufecycle methods of a class component
+
+  1.Initial phase
+     state and props values are initialized
+2.Mounting phase
+   a.constructor()->used to create a class component
+   b.getDerivedStateFromProps()->used to get values of state and props
+   c.render()->used to render the HTML Content
+   d.componentDidMount()->used to HTTP request
+3. Updating phase
+   a.getDerivedStateFromProps()->used to get the values the state and props
+   b.shouldComponentUpdate()->used to declare wheteher the componenet should be
+   c.render()->used to render the updated HTML Content
+   d. getSnampshotBeforeUpdate()->store previous state and props values
+   e.componentDidUpdate()->used to HTTP request
+4.Unmounting phase
+   a.componentWillUnmount()->used to remove a component
+
+
+
+   --------------------------------------
+   React styling
+   1.Inline styling
+   2.Internal styling
+   3.External Styling
+
+   Work with Bootstrap
+   npm install bootstrap@5
+   in node_modules-->bootstrap file installed
+   then go to
+   src/App.js-------> frontend3/src/App.js;
+   so we need to step back
+   ../node_modules/bootstrap/dist/css/bootstrap.min.css
+
+React Routers
+single page application converted to multiple page application
+ npm install react-router-dom
+
+----------------------------------
+Axios
+npm install axios
+Axios is used to work with:
+HTTP request(CRUD Operations)
+1.post-Create
+2.get-Read
+3.put-Update
+4.delete-Delete
+Axios.post(url,{newObj})
+Axios.get(url)
+Axios.get(url+id)
+Axios.put(url+id,{updatedObj})
+Axios.delete(url+id)
+
+Axios will return back a promise
+
+const p=newPromise((res,rej)=>{
+   res("shaurya");
+})
+p
+.then((msg)=>console.log("hi "+msg))
+.catch((msg)=>console.log("bye "+msg))
+-----------------------------------------------
+echo "# test1" >> README.md
+git init
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/S07I/test1.git
+git push -u origin main

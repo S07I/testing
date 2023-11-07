@@ -1,0 +1,25 @@
+React Set Up
+npm -v=>18.12.1
+npm -v=>8.19.2
+To modigy the version the command is
+npm install -g application@versionEG:
+npm install -g node@18.12.1
+npm install -g npm@8.19.2
+
+Setting->edit the environmenr variable->environment variable->system variable->Path->New->filePath of node aaplication
+npx create-react-app[folderName]
+Eg:npx create-react-app frontend1
+
+
+cd frontend1
+npm start
+
+
+//
+echo "# test2" >> README.md
+git init
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/S07I/test2.git
+git push -u origin main
